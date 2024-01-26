@@ -16,6 +16,12 @@ jobs:
 
     - name: Compile and package
       run: make
+      
+    - name: Upload Artifact
+      uses: actions/upload-artifact@v3
+      with:
+        name: MyFramework.xcframework
+        path: _install
 
     - name: Cleanup
       run: make clean
