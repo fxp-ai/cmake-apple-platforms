@@ -1,9 +1,7 @@
-#!/bin/zsh
+#!/usr/bin/env sh
 
 export BUILD_DIR=_build
 export INSTALL_DIR=_install
-
-rm -rf _build _install
 
 cmake --fresh -S . -B ${BUILD_DIR} -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR}/iOS_Simulator  -DCMAKE_SYSTEM_NAME=iOS -GXcode; cmake --build ${BUILD_DIR} --config Release --target install -- -sdk iphonesimulator
 cmake --fresh -S . -B ${BUILD_DIR} -DCMAKE_INSTALL_PREFIX=${INSTALL_DIR}/iOS  -DCMAKE_SYSTEM_NAME=iOS -GXcode; cmake --build ${BUILD_DIR} --config Release --target install -- -sdk iphoneos
